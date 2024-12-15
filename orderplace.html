@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./mama-Photoroom.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Billing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-top: 15px;
+        }
+
+        #thank {
+            text-shadow: 1px 1px black;
+            padding: 30px;
+            color: #00704A;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        img {
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+        }
+        #co{
+            margin-bottom: 10px;
+        }
+
+        .show-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00704A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .show-button:hover {
+            background-color: #005f34;
+        }
+
+        .content {
+            display: none; 
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 1.5em; 
+            }
+
+            #thank {
+                font-size: 1.2em; 
+                padding: 15px;
+            }
+
+            img {
+                width: 80%; 
+            }
+
+            .show-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            h1 {
+                font-size: 1.8em; 
+            }
+
+            #thank {
+                font-size: 1.4em; 
+                padding: 20px;
+            }
+
+            img {
+                width: 250px; 
+            }
+        }
+
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            #thank {
+                font-size: 2em; 
+                padding: 30px;
+            }
+
+            img {
+                width: 300px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <center><button class="show-button" id="co" onclick="cod()">Cash On Delivery (COD)</button></center>
+    <div id="cod" style="display: none;">
+        <center><img src="./oops.jpg" alt="Oops Image"></center>
+        <center><h1>Your Order Has Been Placed......!</h1></center>
+        <center><h1 id="thank">Thank You Choosing Lungi Mama's</h1></center>
+    
+
+    <center><button class="show-button" onclick="showContent()">Click to See Message</button></center>
+</div>
+    <div id="additionalContent" class="content">
+        <h2>We appreciate your order!</h2>
+        <p>Our team is already working on preparing your items. Enjoy your cup of coffee from Lungi Mama's!</p>
+    </div>
+
+    <script>
+        function showContent() {
+            var content = document.getElementById("additionalContent");
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function cod() {
+            var content = document.getElementById("cod");
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
+
