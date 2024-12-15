@@ -23,7 +23,7 @@ function displayItems() {
         star.setAttribute('id', 'rating');
         star.innerText = ' ' + item.rating;
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
         cardTop.appendChild(star);
         cardTop.appendChild(heart);
@@ -51,7 +51,7 @@ function displayItems() {
         star.setAttribute('id', 'rating');
         star.innerText = ' ' + item.rating;
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
         cardTop.appendChild(star);
         cardTop.appendChild(heart);
@@ -85,7 +85,7 @@ function displayItems() {
         star.setAttribute('id', 'rating');
         star.innerText = ' ' + item.rating;
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
         cardTop.appendChild(star);
         cardTop.appendChild(heart);
@@ -118,7 +118,7 @@ function displayItems() {
         star.innerText = ' ' + item.rating;
 
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
 
         cardTop.appendChild(star);
@@ -159,7 +159,7 @@ function displayItems() {
         star.innerText = ' ' + item.rating;
 
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
 
         cardTop.appendChild(star);
@@ -199,7 +199,7 @@ lunchData.map(item => {
         star.innerText = ' ' + item.rating;
 
         var heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
+        heart.setAttribute('class', 'fa fa-cart-plus add-to-cart');
         heart.setAttribute('id', item.id)
 
         cardTop.appendChild(star);
