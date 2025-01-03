@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login | Lungi Mama </title>
+	<title>Signup | Lungi Mama </title>
 	<link rel="icon" type="image/x-icon" href="./mama-Photoroom.png">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -229,6 +229,15 @@ a:hover{
 	form{
 		width: 290px;
 	}
+	.modal{
+	
+        width: 90%;
+	top: auto;
+        /* right: 10px; */
+		left: 100px;
+        padding: 10px;
+      
+	}
 
 	.login-content h2{
         font-size: 2.4rem;
@@ -247,6 +256,14 @@ h1{
 	.container{
 		grid-template-columns: 1fr;
 	}
+	.modal{
+	top: 70px;
+	width: 90%;
+	top: 10px;
+	right: 50px;
+	padding: 10px;
+  
+}
 
 	.img{
 		display: none;
@@ -259,7 +276,58 @@ h1{
 	.login-content{
 		justify-content: center;
 	}
-}
+} 
+
+
+
+.modal {
+      position: fixed;
+      right: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      border-left: 5px solid #4CAF50;
+    }
+
+    .modal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .success-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+    }
+    .modal-message {
+      flex: 1;
+      font-size: 14px;
+      color: #333;
+    }
+    .modal-close {
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
 
 .background-video {
       position: absolute;
@@ -269,12 +337,22 @@ h1{
       height: 50%;
       object-fit: cover; 
       z-index: -1; 
-    }
+    } 
+
+
+
 
     </style>
 </head>
 
 <body>
+	<div class="modal" id="successModal">
+		<div class="success-icon">✔</div>
+		<div class="modal-message">Click Logo for Guest entry</div>
+		<button class="modal-close" id="closeModal">&times;</button>
+	  </div>
+
+
 	<marquee width="100%" class="marquee-text" direction="right" scrollamount="10" >
 		&emsp; &emsp; &emsp; &emsp; India ya ka fastest delivery.🚀☕  &emsp; &emsp; &emsp; &emsp;	Sip, sip, hooray! Your coffee is just a click away ☕✨  &emsp; &emsp; &emsp; &emsp; India ya ka fastest delivery.🚀☕  &emsp; &emsp; &emsp; &emsp;   Sip, sip, hooray! Your coffee is just a click away.☕✨  &emsp; &emsp; &emsp; &emsp;
 		</marquee>
@@ -291,9 +369,11 @@ h1{
 		<div class="login-content">
             
 			<form action="">
-				<img class="animate__animated animate__bounce" src="./mama-Photoroom.png">
+				
+	      <a href="./index.html"><img class="animate__animated animate__bounce" src="./mama-Photoroom.png"></a>
 				<h3 class="title">Welcome to</h3>
 				<h1>Lungi Mama</h1>
+				<i>Signup</i>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
@@ -320,10 +400,11 @@ h1{
            		    	<input type="password" placeholder="Password" id="password" class="input">
             	   </div>
             	</div>
-            	<a href="#">Forgot Password?</a>
+            	<span style="display: inline;">Already Have signup<a href="./start.html"> Click Me</a></span>
             	<input type="submit" class="btn" id="signup" >
             
             </form>
+
         </div>
     </div>
     <script type="module">
@@ -363,8 +444,8 @@ h1{
 						password: password
                     });
 
-                    alert('You have successfully login and Welcome to Lungi Mamas family');
-                    window.location.href = "./index.html";
+                    alert('Sign up successfully..... ');
+                    window.location.href = "./start.html";
                 } catch (error) {
                     alert(`Error: ${error.message}`);
                 }
@@ -372,8 +453,20 @@ h1{
         });
 
 		window.addEventListener("load", () => {
-  alert(" Login to the Continue Order.....");
+  alert(" Signup and Login to the Continue Ordering.....");
 });
+
+ window.onload = function () {
+      const modal = document.getElementById('successModal');
+      modal.classList.add('show');
+      setTimeout(() => {
+        modal.classList.remove('show');
+      }, 7000);
+    };
+    document.getElementById('closeModal').addEventListener('click', function () {
+      const modal = document.getElementById('successModal');
+      modal.classList.remove('show');
+    });
 
     </script>
 </body>
