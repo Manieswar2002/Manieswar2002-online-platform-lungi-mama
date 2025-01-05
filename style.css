@@ -26,9 +26,47 @@ body{
 }
 #menu{
     background: whitesmoke;
-    /* background-color: black; */
+
    
 }
+.start{
+    background-color: whitesmoke;
+    display: inline-block;
+}
+#marquee {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: red;
+    white-space: nowrap;
+    animation: move 10s linear infinite, changeColor 2s infinite;
+  }
+
+  @keyframes move {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes changeColor {
+    0% {
+      color: red;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
 .title{
     padding: 0 30px;
 }
@@ -125,6 +163,39 @@ body{
     color: rosybrown;
     padding: 0 5px;
 }
+.sign{
+    outline: none;
+    border: none;
+    background: #00704A;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    bottom: 30px;
+    margin: 15px 0;
+    cursor: pointer;
+     margin-top: -5px ;
+     margin-bottom: 20px;
+     margin-left: 80px;
+}
+.sign:active{
+    outline: none;
+    border: none;
+    background: crimson;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    bottom: 30px;
+    margin: 15px 0;
+    cursor: pointer;
+     margin-top: -5px ;
+     margin-bottom: 20px;
+     margin-left: 80px;
+}
+
 .food-items{
     display: none;
 }
@@ -390,6 +461,9 @@ a{
         height: 60px;
         
     }
+    .start{
+        background: white;
+    }
     #logo1{
         color: #00704A;
     }
@@ -544,6 +618,9 @@ a{
     }
     #food-items{
         padding: 0;
+    }
+    .start{
+        background: white;
     }
 }
 
