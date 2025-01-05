@@ -431,7 +431,7 @@ a{
     text-decoration: none;
     color: lightcoral;
 }
-@media screen and (max-width : 800px) and (-webkit-min-device-pixel-ratio: 2){
+ @media screen and (max-width : 800px) and (-webkit-min-device-pixel-ratio: 2){
     .container{
         display: none;
     }
@@ -461,9 +461,11 @@ a{
         height: 60px;
         
     }
-    .start{
-        background: white;
-    }
+  .start{
+   font-size: 0.7rem;
+   background-color: white;
+    
+  } 
     #logo1{
         color: #00704A;
     }
@@ -546,7 +548,11 @@ a{
         color: indianred;
         text-transform: uppercase;
         font-size: 16px;
+        margin-top: -30px;
+        margin-bottom: 20px;
         position: static;
+
+
     }
     #category-name{
         font-size: 25px;
@@ -593,8 +599,6 @@ a{
         padding: 5px 10px;
         margin: 0;
         border:  1px solid lightcoral;
-
-        /* float: right; */
     }
     .cart-btn{
         font-size: 14px;
@@ -609,9 +613,9 @@ a{
 }
 
 @media screen and (max-width : 400px) and (-webkit-min-device-pixel-ratio: 2){
-    #mobile-view{
+     #mobile-view{
         min-height: -webkit-fill-available;
-    }
+    } 
     #item-card{
         height: 200px;
         width: 140px;
@@ -619,9 +623,10 @@ a{
     #food-items{
         padding: 0;
     }
-    .start{
-        background: white;
-    }
+    /* .start{
+       display: none;
+      }  */
+   
 }
 
 #sai{
@@ -634,3 +639,7 @@ a{
 
 
 
+
+ 
+ 
+ 
