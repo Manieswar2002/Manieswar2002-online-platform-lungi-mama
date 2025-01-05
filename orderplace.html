@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="./mama-Photoroom.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Billing</title>
+    <title>Order Billing | Lungi Mama</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +29,8 @@
             max-width: 100%;
             height: auto;
         }
-        #co{
+
+        #co {
             margin-bottom: 10px;
         }
 
@@ -54,6 +55,34 @@
             padding: 20px;
             border-radius: 8px;
         }
+
+        .payment-details input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-form {
+            display: none;
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px;
+            background-color: #005f34;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
         @media (max-width: 767px) {
             h1 {
                 font-size: 1.5em; 
@@ -73,6 +102,7 @@
                 padding: 8px 16px;
             }
         }
+
         @media (min-width: 768px) and (max-width: 1024px) {
             h1 {
                 font-size: 1.8em; 
@@ -105,34 +135,73 @@
     </style>
 </head>
 <body>
-   <center><button class="show-button" id="co" onclick="cod()">UPI</button>
-    <button class="show-button" id="co" onclick="cod()">Debit card</button>
-    <button class="show-button" id="co" onclick="cod()">Credit card</button>
-    <button class="show-button" id="co" onclick="cod()">Cash On Delivery (COD)</button></center>
+    <center>
+        <button class="show-button" id="co" onclick="showPaymentForm('UPI')">UPI</button>
+        <button class="show-button" id="co" onclick="showPaymentForm('Debit Card')">Debit Card</button>
+        <button class="show-button" id="co" onclick="showPaymentForm('Credit Card')">Credit Card</button>
+        <button class="show-button" id="co" onclick="showPaymentForm('Cash On Delivery')">Cash On Delivery (COD)</button>
+    </center>
+
+    <center><div id="payment-form-container" class="payment-form">
+        <h1 id="payment-title"></h1>
+        <div id="payment-details"></div>
+        <button onclick="submitPayment()">Submit Payment</button>
+    </div></center>
+
     <div id="cod" style="display: none;">
         <center><img src="./oops.jpg" alt="Oops Image"></center>
         <center><h1>Your Order Has Been Placed......!</h1></center>
-        <center><h1 id="thank">Thank You Choosing Lungi Mama's</h1></center>
-    
+        <center><h1 id="thank">Thank You for Choosing Lungi Mama's</h1></center>
+        <center><h2 id="payment-method"></h2></center>
+        <center><button class="show-button" onclick="showContent()">Click to See Message</button></center>
+    </div>
 
-    <center><button class="show-button" onclick="showContent()">Click to See Message</button></center>
-</div>
     <div id="additionalContent" class="content">
         <h2>We appreciate your order!</h2>
         <p>Our team is already working on preparing your items. Enjoy your cup of coffee from Lungi Mama's!</p>
     </div>
 
     <script>
+        let selectedPaymentMethod = "";
+
         function showContent() {
             var content = document.getElementById("additionalContent");
             content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
         }
 
-        function cod() {
-            var content = document.getElementById("cod");
-            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        function showPaymentForm(method) {
+            selectedPaymentMethod = method; 
+            const formContainer = document.getElementById("payment-form-container");
+            const paymentTitle = document.getElementById("payment-title");
+            const paymentDetails = document.getElementById("payment-details");
+
+            formContainer.style.display = "block";
+            paymentTitle.textContent = `${method} Payment`;
+
+            if (method === "UPI") {
+                paymentDetails.innerHTML = '<input type="text" placeholder="Enter UPI ID" required>';
+            } else if (method === "Debit Card" || method === "Credit Card") {
+                paymentDetails.innerHTML = `
+                    <input type="text"  placeholder="Card Number" maxlength="16" required>
+                    <input type="text" placeholder="Cardholder Name" required>
+                    <input type="text" placeholder="MM/YY" maxlength="5" required>
+                    <input type="text" placeholder="CVV" maxlength="3" required>
+                `;
+            } else if (method === "Cash On Delivery") {
+                formContainer.style.display = "none";
+                document.getElementById("cod").style.display = "block";
+                document.getElementById("payment-method").textContent = "Payment Method: Cash On Delivery";
+            }
+        }
+
+        function submitPayment() {
+            alert("Your Payment Successfully!");
+            document.getElementById("payment-form-container").style.display = "none";
+            document.getElementById("cod").style.display = "block";
+
+
+            document.getElementById("payment-method").textContent = `Payment Method: ${selectedPaymentMethod}`;
         }
     </script>
 </body>
 </html>
-
