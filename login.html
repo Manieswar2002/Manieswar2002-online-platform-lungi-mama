@@ -196,6 +196,20 @@ a:hover{
 	cursor: pointer;
 	transition: .5s;
 }
+.guest{
+	padding: 7px;
+	background-color:  #32be8f ;
+	border: none;
+	border-radius: 25px;
+
+}
+.entry:hover{
+ color: #fff ;
+
+}
+.entry{
+	color: #fff;
+}
 #pic{
     display: flex;
     align-items: center;
@@ -370,7 +384,7 @@ h1{
             
 			<form action="">
 				
-	      <a href="./index.html"><img class="animate__animated animate__bounce" src="./mama-Photoroom.png"></a>
+	      <img class="animate__animated animate__bounce" src="./mama-Photoroom.png">
 				<h3 class="title">Welcome to</h3>
 				<h1>Lungi Mama</h1>
 				<i>Signup</i>
@@ -400,7 +414,10 @@ h1{
            		    	<input type="password" placeholder="Password" id="password" class="input">
             	   </div>
             	</div>
-            	<span style="display: inline;">Already Have signup<a href="./start.html"> Click Me</a></span>
+				<div>
+            	<span >Already Have signup<a href="./start.html">Click Me</a></span>
+				</div>
+				<button class="guest"><a class="entry" href="./index.html">Guest entry</a></button>
             	<input type="submit" class="btn" id="signup" >
             
             </form>
@@ -455,19 +472,6 @@ h1{
 		window.addEventListener("load", () => {
   alert(" Signup and Login to the Continue Ordering.....");
 });
-
- window.onload = function () {
-      const modal = document.getElementById('successModal');
-      modal.classList.add('show');
-      setTimeout(() => {
-        modal.classList.remove('show');
-      }, 7000);
-    };
-    document.getElementById('closeModal').addEventListener('click', function () {
-      const modal = document.getElementById('successModal');
-      modal.classList.remove('show');
-    });
-
     </script>
 </body>
 </html>
